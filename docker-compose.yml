@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      REDIS_ADDR: "redis:6379"
+
+    ports:
+      - "8080:8080"
+  redis:
+    image: "redis:alpine" 
